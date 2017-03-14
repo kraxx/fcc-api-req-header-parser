@@ -18,8 +18,6 @@ app.get('/', function(req,res){
   res.send(JSON.stringify(obj));
 });
 
-
-
 app.listen(app.get('port'), function(){
   console.log('Header parser listening on port ' + app.get('port'));
 });
