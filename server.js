@@ -6,10 +6,6 @@ var app = express();
 app.set('port', process.env.PORT || 8080);
 
 app.get('/', function(req,res){
-  res.send('hehe');
-})
-
-app.get('/api', function(req,res){
   var ipAdd = ip.address();
   var lang = req.headers['accept-language'];
   var osPlat = os.platform();
