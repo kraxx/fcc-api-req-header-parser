@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/kraxx/fcc-api-req-header-parser/issues"
   },
-  "homepage": "https://github.com/kraxx/fcc-api-req-header-parser#readme"
+  "homepage": "https://github.com/kraxx/fcc-api-req-header-parser#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "ip": "^1.1.5"
+  },
+  "devDependencies": {}
 }
