@@ -9,10 +9,10 @@ app.get('/', function(req,res){
   // var ipAdd = ip.address();
   var ipAdd = req.headers["x-forwarded-for"];
   var lang = req.headers['accept-language'];
-  var osPlat = os.platform();
+  var osPlat = process.platform;
   var osRel = os.release();
   var obj = {
-    'ipaddress' : ipAdd || 'xD',
+    'ipaddress' : ipAdd || ip.address(),
     'language' : lang,
     'software' : osPlat + ', ' + osRel
 };
@@ -29,7 +29,7 @@ function getClientIp(req) {
   var forwardedIpsStr = req.headers["x-forwarded-for"];
   if (forwardedIpsStr) {
     var forwardedIps = forwardedIpsStr.split(',');
-    ipAddress = forwardedIps[forwardedIps.length-1];
+    ipAddress = forwardedIps[0];
   }
   if (!ipAddress) {
     ipAddress = req.connection.remoteAddress;
