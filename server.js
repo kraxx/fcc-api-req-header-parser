@@ -15,7 +15,7 @@ app.get('/', function(req,res){
     'language' : lang,
     'software' : osPlat + ', ' + osRel
 };
-  res.send(obj);
+  res.send(JSON.stringify(obj));
 });
 
 
